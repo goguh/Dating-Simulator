@@ -1,0 +1,38 @@
+define J = Character("Jackie", color = "#") #girl color
+define M = character("Mat", color = "#") #boy color
+
+
+label start:
+    # i would need a scene after the morning text that would come up first 
+    call screen test_screen
+    
+    #bedroom or school, would rather have it at the school you meet the first character
+    scene 
+
+    #meet the first character have a little bit of conversation
+    #this will also lower the love/hate gauge
+    show J upset
+    J "OUCH, watch where you are going!"
+
+    hide J with dissolve
+    #This will the player or the user 
+    "I'm so sorry, im new here and i dont know where am i going yet :("
+
+    #this will be the first option or mini-game
+    show J happy
+    menu:
+        "Its okay, would you want a tour before going to class?"
+        "yes"
+            jump ending_01
+        "no"
+            jump ending_02
+    
+    return
+
+label ending_01:
+
+    return
+
+label ending_02:
+
+    return
