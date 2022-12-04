@@ -21,18 +21,25 @@ label start:
     #this will be the first option or mini-game
     show J happy
     menu:
-        "Its okay, would you want a tour before going to class?"
+        "Its okay, Since youre new would like a tour before going to class?"
         "yes"
-            jump ending_01
+            jump question_01
         "no"
-            jump ending_02
+            jump question_02
     
     return
 
-label ending_01:
+label question_01:
+    show J happy
+    J "Well whats your room number first?"
+
+    hide J with dissolve
+    "Its BLANK BLANK"
 
     return
 
-label ending_02:
+label question_02:
+    show J upset
+    J "Well i hope you figure e everything out then!! :("
 
     return
