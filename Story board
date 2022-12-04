@@ -1,45 +1,65 @@
-define J = Character("Jackie", color = "#") #girl color
-define M = character("Mat", color = "#") #boy color
+# The script of the game goes in this file.
 
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define J = Character("Jackie")
+define N = Character("Nick")
+
+image picture_1 = "1.jpg"
+
+# The game starts here.
 
 label start:
-    # i would need a scene after the morning text that would come up first 
-    call screen test_screen
     
-    #bedroom or school, would rather have it at the school you meet the first character
-    scene 
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
 
-    #meet the first character have a little bit of conversation
-    #this will also lower the love/hate gauge
-    show J upset
-    J "OUCH, watch where you are going!"
+    scene picture_1
+    "You just woke up."
+    #scene need a 10am clock picture here
+    "And you realize that your running late on the first day of school."
+    #scene car racing to school
+    "Once you get to school your rushing to your first class."
+    #sound of running and a crash
 
-    hide J with dissolve
-    #This will the player or the user 
-    "I'm so sorry, im new here and i dont know where am i going yet :("
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
 
-    #this will be the first option or mini-game
-    show J happy
+    hide J hurt
+
+    # These display lines of dialogue.
+
+    #show J hurt and mad
+    J "OUCH, WATCH WHERE YOU'RE GOING!!"
+
+    "I'm sorry, am in a rush."
+
+    #show J confused
+    J "A rush? its the first day of class, you'll be fine."
+
+    "Maybe but i still dont know where my class is."
+
     menu:
-        "Its okay, Since youre new would like a tour before going to class?"
-        "yes"
-            jump question_01
-        "no"
-            jump question_02
-    
-    return
+        #show J heppy
+        J "Do you need help getting there?"
+        "Yes":
+            jump choice_1
+        "No":
+            jump choice_2
 
-label question_01:
-    show J happy
-    J "Well whats your room number first?"
-
-    hide J with dissolve
-    "Its BLANK BLANK"
+    # This ends the game.
 
     return
 
-label question_02:
-    show J upset
-    J "Well i hope you figure e everything out then!! :("
+label choice_1:
+    #show J joyful
+    J "great! whats the room number?"
+    return
 
+label choice_2:
+    #show J mad
+    J "well good luck bum!"
     return
