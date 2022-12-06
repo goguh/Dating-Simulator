@@ -3,10 +3,14 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define J = Character("Jackie")
-define N = Character("Nick")
+define J = Character("Jessica")
+define N = Character("Nickola")
+define B = Character("Bob")
 
-image picture_1 = "1.jpg"
+image picture_1 = "1.jpg" #black bg
+image picture_2 = "2.jpg" #school
+image picture_3 = "3.jpg" #library
+image picture_4 = "4.jpg" #hall
 
 # The game starts here.
 
@@ -17,37 +21,25 @@ label start:
     # images directory to show it.
 
     scene picture_1
-    "You just woke up."
-    #scene need a 10am clock picture here
-    "And you realize that your running late on the first day of school."
-    #scene car racing to school
-    "Once you get to school your rushing to your first class."
-    #sound of running and a crash
+    "Its the first day of school and youre already running late."
+    #add some type of sound of getting ready to go to school
+    scene picture_2
+    "Once at school you run into a campus staff Bob"
+    #show a Bob
+    B "Morning!"
+    #respone
+    "Good morning do you know where the library is and Jacaranda hall?"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    hide J hurt
-
-    # These display lines of dialogue.
-
-    #show J hurt and mad
-    J "OUCH, WATCH WHERE YOU'RE GOING!!"
-
-    "I'm sorry, am in a rush."
-
-    #show J confused
-    J "A rush? its the first day of class, you'll be fine."
-
-    "Maybe but i still dont know where my class is."
-
     menu:
-        #show J heppy
-        J "Do you need help getting there?"
-        "Yes":
+        #show Bob happy to help
+        B "No problem which buliding do you want to go first?"
+        "Library":
             jump choice_1
-        "No":
+        "Jacaranda hall":
             jump choice_2
 
     # This ends the game.
@@ -55,11 +47,57 @@ label start:
     return
 
 label choice_1:
-    #show J joyful
-    J "great! whats the room number?"
+    #show Bob joyful
+    B "Well at the moment we are ..."
+    #show library
+    scene picture_4
+    "It took you a while to get here but I finally found it."
+    "You walk around and finally found a table that open with a few seats"
+    #show a table
+    J "Hi, Im jessica. I saw you seating here by yourself and"
+    menu:
+        J "i was wondering if i could seat here?"
+        "yes":
+            jump choice_3
+        "No":
+            jump choice_4
+    #introduce jessica
+
     return
 
 label choice_2:
-    #show J mad
-    J "well good luck bum!"
+    #show Bob confused
+    B "Well at the moment we are ..."
+    scene picture_3
+    "well that took long then "
+    #introduce nickola
+    return
+
+label choice_3: #yes option for jessica
+    #show jessica happy
+    J "THANK YOU SO MUCH!"
+    J "honestly i was scared of coming over here"
+    "why"
+    J "well its a normal thing to be, but since there arent any open spots"
+    menu:
+        J "So, hows your first day of school?"
+        "its okay":
+            jump
+        "its kidding of boring":
+            jump
+
+    return
+
+label choice_4: #no option for jessica
+    #show jessica mad
+    J "well i didnt want to seat here anyways. rude ass!"
+    "Shes overdratic lol"
+    #show nickolas
+    N "Hey man, just saw what happen with that girl"
+    menu:
+        N "are you okay?"
+        "yes":
+            jump
+        "no":
+            jump
     return
