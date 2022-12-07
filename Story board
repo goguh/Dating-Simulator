@@ -3,17 +3,30 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define J = Character("Jessica")
-define N = Character("Nickola")
-define B = Character("Bob")
+#Story characters
+define E = Character("Ed") #School help
 
+#1st main characters
+define J = Character("Jessica") 
+define N = Character("Nickola") 
+#2nd main characters
+define A = Character("April")
+define M = Character("Mao")
+
+
+#background images
 image picture_1 = "1.jpg" #black bg
 image picture_2 = "2.jpg" #school
 image picture_3 = "3.jpg" #library
 image picture_4 = "4.jpg" #hall
 
-# The game starts here.
 
+#images for Characters
+
+
+
+
+# The game starts here.
 label start:
     
     # Show a background. This uses a placeholder by default, but you can
@@ -22,21 +35,25 @@ label start:
 
     scene picture_1
     "Its the first day of school and youre already running late."
+    "You decide to get ready in a rush"
     #add some type of sound of getting ready to go to school
     scene picture_2
-    "Once at school you run into a campus staff Bob"
-    #show a Bob
-    B "Morning!"
+    "Once at school youre confused on where to go"
+    "As soon you decide to walk around, you meet Ed"
+
+    #show a Ed
+    E "Morning!, i hope youre having a great first day"
     #respone
-    "Good morning do you know where the library is and Jacaranda hall?"
+    "Good morning i was just wonder how do I get the library from here"
+    "Also to Jacaranda hall?"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
     menu:
-        #show Bob happy to help
-        B "No problem which buliding do you want to go first?"
+        #show Ed happy to help
+        E "No problem which buliding do you want to go first?"
         "Library":
             jump choice_1
         "Jacaranda hall":
@@ -46,15 +63,20 @@ label start:
 
     return
 
+
+#Library chapter
 label choice_1:
-    #show Bob joyful
-    B "Well at the moment we are ..."
+    #show Ed joyful
+    E "Well at the moment we are ..."
     #show library
     scene picture_4
-    "It took you a while to get here but I finally found it."
-    "You walk around and finally found a table that open with a few seats"
+    "Well it took a while but Im finally here."
+    #audio of people
+    "Once instead you noticed its packed."
+    "Your walking around to find a open table."
     #show a table
-    J "Hi, Im jessica. I saw you seating here by yourself and"
+    "Once sat, a girl approaches you."
+    J "Hi, Im jessica."
     menu:
         J "i was wondering if i could seat here?"
         "yes":
@@ -66,13 +88,35 @@ label choice_1:
     return
 
 label choice_2:
-    #show Bob confused
-    B "Well at the moment we are ..."
+    #show Ed confused
+    E "Well at the moment we are ..."
     scene picture_3
-    "well that took long then "
+    "That took a while but Im finally here."
+    "Once entering the class, you noticed that youre early lol."
+    #sound of crickets
+    "You decide to seat in the back."
+    #end sound
+    "which normally seems right and put your head down."
+    "A few mintues pass by and head foot steps walking towards you."
     #introduce nickola
+    N "Hey man, i know this is awkard but is this the senior design class??"
+    menu:
+        N "I kinda got lost and the numbers are confusing"
+        "Yes":
+            jump choice_5
+        "No":
+            jump choice_6
     return
 
+
+
+
+
+
+
+
+
+#yes and no option for Library
 label choice_3: #yes option for jessica
     #show jessica happy
     J "THANK YOU SO MUCH!"
@@ -100,4 +144,13 @@ label choice_4: #no option for jessica
             jump
         "no":
             jump
+    return
+
+
+
+#yes and no options for the class room
+label choice_5:
+    return
+
+label choice_6:
     return
