@@ -7,21 +7,19 @@
 define P = Character("[povname]")
 
 #Story characters
-define E = Character("Ed") #School help
+define E = Character("Ed") #School help 
+define M = Character("Mao") #professor
 
 #1st main characters
 define J = Character("Jessica") 
 define N = Character("Nickola") 
-#2nd main characters
-define A = Character("April")
-define M = Character("Mao")
-
 
 #background images
 image picture_1 = "1.jpg" #black bg
 image picture_2 = "2.jpg" #school
 image picture_3 = "3.jpg" #library
 image picture_4 = "4.jpg" #hall
+image picture_5 = "5.jpg" #sushi date
 
 
 #images for Characters
@@ -46,12 +44,13 @@ label start:
     # images directory to show it.
 
     scene picture_1
-    P "Its the first day of school and youre already running late."
-    P "You decide to get ready in a rush"
+    "Its the first day of school and youre already running late."
+    "You decide to get ready in a rush."
     #add some type of sound of getting ready to go to school
     scene picture_2
-    P "Once at school youre confused on where to go"
-    P "As soon you decide to walk around, you meet Ed"
+    "Once at school youre confused on where to go."
+    "As soon you decide to walk around and find help."
+    "Well walking to the quad, you end up bumpimg in Ed."
 
     #show a Ed
     E "Morning!, i hope youre having a great first day"
@@ -66,6 +65,7 @@ label start:
     menu:
         #show Ed happy to help
         E "No problem which buliding do you want to go first?"
+        #this first to choices are going to be yes and no, just so you can meet the characters
         "Library":
             jump choice_1
         "Jacaranda hall":
@@ -84,10 +84,12 @@ label choice_1:
     scene picture_4
     P "Well it took a while but Im finally here."
     #audio of people
-    P "Once instead you noticed its packed."
+    P "Once inside you noticed its packed."
+    #audio of walking
     P "Your walking around to find a open table."
     #show a table
     P "Once sat, a girl approaches you."
+    #introduce jessica
     J "Hi, Im jessica."
     menu:
         J "i was wondering if i could seat here?"
@@ -95,8 +97,6 @@ label choice_1:
             jump choice_3
         "No":
             jump choice_4
-    #introduce jessica
-
     return
 
 #Hall chapter 1
@@ -105,50 +105,42 @@ label choice_2:
     E "Well at the moment we are ..."
     scene picture_3
     P "That took a while but Im finally here."
-    P "Once entering the class, you noticed that youre early lol."
+    "Once entering the class, you noticed that youre early lol."
     #sound of crickets
-    P "You decide to seat in the back."
+    "You decide to seat in the back."
     #end sound
-    P "which normally seems right and put your head down."
-    P "A few mintues pass by and head foot steps walking towards you."
+    "which normally seems right and put your head down."
+    "A few mintues pass by and head foot steps walking towards you."
     #introduce nickola
     N "Hey man, i know this is awkard but is this the senior design class??"
     menu:
         N "I kinda got lost and the numbers are confusing"
         "Yes":
-            jump choice_5
+            jump choice
         "No":
-            jump choice_6
+            jump choice
     return
 
-
-
-
-
-
-
-
-
-#Options for Library
-#yes option for jessica
-label choice_3: 
-    #show jessica happy
-    J "THANK YOU SO MUCH!"
-    J "honestly i was scared of coming over here"
-    P "why"
-    J "well its a normal thing to be, but since there arent any open spots"
-    J "I took a giant leap of faith and ask haha"
+#Library chapter 2 (yes)
+label choice_3:
+    P "Of course! You can!"
+    P "My name is [povname] by the way"
+    J "Its nice to meet you"
+    P "Same, so how's your first day going?"
+    J "honestly, kinda of boring"
     menu:
-        J "So, hows your first day of school?"
-        "its okay":
-            jump
-        "its kidding of boring":
-            jump
-
+        J "Hey, do you want to get out of here"
+        "Yes":
+            jump choice_5
+        "Maybe":
+            jump choice_6
+        "No":
+            jump choice_7
     return
 
-#no option for jessica
-label choice_4: 
+#Library chapter 3 (no)
+#meeting Nick
+label choice_4:
     #show jessica mad
     J "well i didnt want to seat here anyways. rude ass!"
     P "Shes overdratic lol"
@@ -157,31 +149,77 @@ label choice_4:
     menu:
         N "are you okay?"
         "Yeah":
-            jump
+            jump choice_8
+        "Maybe":
+            jump choice_9
         "Nah":
-            jump
+            jump choice_10
     return
 
-
-
-#Options for Hall
-#Yes option for Hall
+#Library chapter 2.1 (Yes)
 label choice_5:
-    P "Its all good, umm i think it is"
-    P "Its nice to meet you btw"
-    N "same, well i guess will have to wait until the professor comes"
-    N "How many semester do you have left?"
-    P "One year, if everything goes right"
-    P "What about yourself?"
-    N "Same actually!"
+    P "Yeah sure!"
+    J "I know this awesome place to eat"
+    P "What kind?"
     menu:
-        N "Im going to go get a snack, do you want something"
+        #would need a sushi resturant for next scene
+        J "you like sushi right?"
+        "Yes":
+            jump
+        "Maybe":
+            jump choice_6
+        "No":
+            jump choice_7
+    return
+
+#Library chapter 2.2 (Maybe)
+label choice_6:
+    P "Well i could be convinced"
+    P "What did you have in mind"
+    J "Actually nvm lets stay here and what for class lol"
+    "All you were thinking is that"
+    "I just got friend zoned"
+    return
+
+#Library chapter 2.3 (No)
+label choice_7:
+    J "well looks up my time is up"
+    J "got class in a few mintues"
+    P "That girl was weird."
+    return
+
+#Library chapter 3.1 (yes) still need to be worked on
+label choice_8:
+    N "By the way my name is Nick"
+    P "Hey, am [povname]"
+    N "Its crazy how females are now a days"
+    "Youre telling me lol"
+    N "You seem like a cool dude, honestly"
+    menu:
+        N "Hey this is crazy that i just meet you"
+        N "But can i walk you to your class"
         "yes":
             jump
         "no":
+            jump 
+        "maybe":
             jump
     return
 
-#No option for Hall
-label choice_6:
+#Library chapter 3.2 (maybe)
+label choice_9:
+    N "Dont let it go to your head."
+    N "You know what, i was going to get a snack"
+    N "Do you want something?"
+    "Whos going to turn down free food"
+    "Ended up just going with Nick"
+    P "thanks man, youre good people."
+    return
+
+#Library chapter 3.3 (No)
+label choice_10:
+    P "Im good man, thank you"
+    N "If you need a shoulder to cry on ill be in the corner"
+    N "Watching you jk"
+    N "ill catch you xoxo"
     return
