@@ -99,13 +99,13 @@ label choice_1:
             jump choice_4 #chapter3
     return
 
-            #Library chapter 2 (yes)
-                label choice_3:
-                P "Of course! You can!"
-                P "My name is [povname] by the way"
-                J "Its nice to meet you"
-                P "Same, so how's your first day going?"
-                J "honestly, kinda of boring"
+        #Library chapter 2 (yes)
+        label choice_3:
+            P "Of course! You can!"
+            P "My name is [povname] by the way"
+            J "Its nice to meet you"
+            P "Same, so how's your first day going?"
+            J "honestly, kinda of boring"
                 menu:
                     J "Hey, do you want to get out of here"
                     "Yes":
@@ -116,11 +116,11 @@ label choice_1:
                         jump choice_7
                 return
             
-                    #Library chapter 2.1 (Yes)
-                    label choice_5:
-                        P "Yeah sure!"
-                        J "I know this awesome place to eat"
-                        P "What kind?"
+                #Library chapter 2.1 (Yes)
+                label choice_5:
+                    P "Yeah sure!"
+                    J "I know this awesome place to eat"
+                    P "What kind?"
                         menu:
                             #would need a sushi resturant for next scene
                             J "you like sushi right?"
@@ -132,21 +132,21 @@ label choice_1:
                                 jump choice_7
                         return
 
-                    #Library chapter 2.2 (Maybe)
-                    label choice_6:
-                        P "Well i could be convinced"
-                        P "What did you have in mind"
-                        J "Actually nvm lets stay here and what for class lol"
-                        "All you were thinking is that"
-                        "I just got friend zoned"
-                        return
+                        #Library chapter 2.2 (Maybe)
+                        label choice_6:
+                            P "Well i could be convinced"
+                            P "What did you have in mind"
+                            J "Actually nvm lets stay here and what for class lol"
+                            "All you were thinking is that"
+                            "I just got friend zoned"
+                            return
 
-                    #Library chapter 2.3 (No)
-                    label choice_7:
-                        J "well looks up my time is up"
-                        J "got class in a few mintues"
-                        P "That girl was weird."
-                        return
+                        #Library chapter 2.3 (No)
+                        label choice_7:
+                            J "well looks up my time is up"
+                            J "got class in a few mintues"
+                            P "That girl was weird."
+                            return
 
                         #Library chapter 2.11
                         label choice_11: 
@@ -156,3 +156,51 @@ label choice_1:
                             J "Dont be silly will go in the same care. <3"
                             "All your thinking is that you might a future gf."
                             return
+
+
+
+        #Library chapter 3 meeting Nick (No)
+        label choice_4:
+            #show jessica mad
+            J "well i didnt want to seat here anyways. rude ass!"
+            P "Shes overdratic lol"
+            #show nickolas
+            N "Hey man, just saw what happened with that girl"
+            menu:
+                N "are you okay?"
+                "Yeah":
+                    jump choice_8
+                "Maybe":
+                    jump choice_9
+                "Nah":
+                    jump choice_10
+            return
+
+                #Library chapter 3.1 (yes) still need to be worked on
+                label choice_8:
+                    N "By the way my name is Nick"
+                    P "Hey, am [povname]"
+                    N "Its crazy how females are now a days"
+                    "Youre telling me lol"
+                    N "You seem like a cool dude, honestly"
+                    N "Hey this is crazy that i just meet you"
+                    N "But can i walk you to your class"
+                    return
+
+                #Library chapter 3.2 (maybe)
+                label choice_9:
+                    N "Dont let it go to your head."
+                    N "You know what, i was going to get a snack"
+                    N "Do you want something?"
+                    "Whos going to turn down free food"
+                    "Ended up just going with Nick"
+                    P "thanks man, youre good people."
+                    return
+
+                #Library chapter 3.3 (No)
+                label choice_10:
+                    P "Im good man, thank you"
+                    N "If you need a shoulder to cry on ill be in the corner"
+                    N "Watching you jk"
+                    N "ill catch you xoxo"
+                    return
