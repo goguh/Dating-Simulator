@@ -98,13 +98,13 @@ label choice_1:
         "No":
             jump choice_4 #chapter3
     return
-
-        #Library chapter 2 (yes)
-        label choice_3:
-            P "Of course! You can!"
-            P "My name is [povname] by the way"
-            J "Its nice to meet you"
-            P "Same, so how's your first day going?"
+    
+#Library chapter 2 (yes)
+label choice_3:
+  P "Of course! You can!"
+  P "My name is [povname] by the way"
+  J "Its nice to meet you"
+  P "Same, so how's your first day going?"
             J "honestly, kinda of boring"
                 menu:
                     J "Hey, do you want to get out of here"
