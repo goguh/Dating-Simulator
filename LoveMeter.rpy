@@ -348,7 +348,7 @@ label choice_4:
     hide Jessica neutral
     P "Shes overdratic lol"
     #show nickolas
-    show Nickolas
+    show Nickolas neutral
     N "Hey man, just saw what happened with that girl"
     menu:
         N "are you okay?"
