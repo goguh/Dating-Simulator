@@ -78,6 +78,16 @@ image picture_5 = "5.jpg" #sushi date
 
 #images for Characters
 
+#images for Characters
+image Jessica angry1 = "Character1/angry.png"
+image Jessica angry2 = "Character1/angry2.png"
+image Jessica blush = "Character1/blush.png"
+image Jessica confuse1 = "Character1/confuse.png"
+image Jessica confuse2 = "Character1/confuse2.png"
+image Jessica glad = "Character1/glad.png"
+image Jessica neutral = "Character1/neutral.png"
+image Jessica sad = "Character1/sad.png"
+image Jessica smile = "Character1/smile.png"
 
 
 
@@ -144,6 +154,7 @@ label choice_1:
     #show a table
     P "Once sat, a girl approaches you."
     #introduce jessica
+    show Jessica neutral
     J "Hi, Im jessica."
     menu:
         J "i was wondering if i could seat here?"
