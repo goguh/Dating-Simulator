@@ -79,6 +79,10 @@ image picture_5 = "5.jpg" #sushi date
 #images for Characters
 
 #images for Characters
+
+#ED
+
+#Jessica
 image Jessica angry1 = "Character1/angry.png"
 image Jessica angry2 = "Character1/angry2.png"
 image Jessica blush = "Character1/blush.png"
@@ -89,7 +93,8 @@ image Jessica neutral = "Character1/neutral.png"
 image Jessica sad = "Character1/sad.png"
 image Jessica smile = "Character1/smile.png"
 
-
+#Nickolas
+image Nickolas neutral = im.Scale("Character2/neutral.png",700,950)
 
 # The game starts here.
 label start:
@@ -340,8 +345,10 @@ label choice_11:
 label choice_4:
     #show jessica mad
     J "well i didnt want to seat here anyways. rude ass!"
+    hide Jessica neutral
     P "Shes overdratic lol"
     #show nickolas
+    show Nickolas
     N "Hey man, just saw what happened with that girl"
     menu:
         N "are you okay?"
