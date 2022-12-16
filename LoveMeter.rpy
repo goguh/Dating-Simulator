@@ -81,6 +81,7 @@ image picture_5 = "5.jpg" #sushi date
 #images for Characters
 
 #ED
+image Ed = im.Scale("Ed.png",700,900)
 
 #Jessica
 image Jessica angry1 = "Character1/angry.png"
@@ -122,6 +123,7 @@ label start:
     "Well walking to the quad, you end up bumpimg in Ed."
 
     #show a Ed
+    show Ed
     E "Morning!, i hope youre having a great first day"
     #respone
     P "Good morning i was just wonder how do I get the library from here"
@@ -149,6 +151,7 @@ label start:
 label choice_1:
     #show Ed joyful
     E "Well at the moment we are ..."
+    hide Ed
     #show library
     scene picture_4
     P "Well it took a while but Im finally here."
